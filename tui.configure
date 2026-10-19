@@ -1,0 +1,78 @@
+# tui.configure — TUI 界面配色方案
+#
+# 每行 key=value。颜色值 = SGR 参数（不含 ESC[ 和结尾 m），分号分隔。
+# 例如 "1;37" 表示粗体白，"7;36" 表示反显青。
+# 留空表示"跟随系统/终端"。
+#
+# 字段含义:
+#   text    客户区文字前景
+#   bg      客户区背景
+#   border  边框前景
+#   title   标题文字前景
+#   hint    提示/功能区文字前景
+#   select  选中项样式（通常是反显 + 强调色）
+#
+# current = 启动时使用的方案编号
+# 运行时按数字键 1-9 或 Ctrl+1..9 即时切换
+
+current=1
+count=5
+
+scheme.1.name=Default
+scheme.1.system=1
+
+# 深色主题：白字黑底
+scheme.2.name=Dark
+scheme.2.system=0
+scheme.2.text=37
+scheme.2.bg=40
+scheme.2.border=37;40
+scheme.2.title=1;37
+scheme.2.hint=2;37
+scheme.2.select=7
+
+# 浅色主题：黑字白底，其它全跟随
+scheme.3.name=Light
+scheme.3.system=0
+scheme.3.text=30
+scheme.3.bg=47
+scheme.3.border=30;47
+scheme.3.title=1;30
+scheme.3.hint=2;30
+scheme.3.select=7
+
+scheme.4.name=Blue
+scheme.4.system=0
+scheme.4.text=96
+scheme.4.bg=44
+scheme.4.border=44;37
+scheme.4.title=44;97
+scheme.4.hint=93
+scheme.4.select=7;97
+
+scheme.5.name=Fluorescent
+scheme.5.system=0
+scheme.5.text=32;40
+scheme.5.bg=32;40
+scheme.5.border=32;40
+scheme.5.title=92;40
+scheme.5.hint=92;40
+scheme.5.select=30;42
+
+# SGR 参数对照
+# 颜色	前景（文字）	背景
+# 黑	30	40
+# 红	31	41
+# 绿	32	42
+# 黄	33	43
+# 蓝	34	44
+# 品红	35	45
+# 青	36	46
+# 白	37	47
+# 亮黑（深灰）	90	100
+# 亮红	91	101
+# 亮绿	92	102
+# 亮黄	93	103
+# 亮蓝	94	104
+# 亮青	96	106
+# 亮白	97	107
